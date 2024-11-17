@@ -43,6 +43,7 @@ animations = [{
 radius = 4.0
 
 [node name="Player" type="CharacterBody2D"]
+safe_margin = 1.0
 script = ExtResource("1_smyyd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

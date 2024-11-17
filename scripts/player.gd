@@ -1,8 +1,13 @@
 extends CharacterBody2D
 
+
 const SPEED = 20.0
 const JUMP_VELOCITY = -300.0
-@onready var player2D = $AnimatedSprite2D
+
+@onready var player2D = $AnimatedSprite2D 
+
+func _ready():
+	motion_mode = MOTION_MODE_GROUNDED
 # Variable to track movement direction (1 for right, -1 for left)
 var direction := 1
 
@@ -30,3 +35,9 @@ func _physics_process(delta: float) -> void:
 			#player2D.flip_h = true
 		#else:
 			#player2D.flip_h = false
+#func _input(event):
+	#if event is InputEventMouseButton:
+		#if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			#if is_pixel_opaque(get_local_mouse_position()):
+				#print("Sprite Clicked")
+	#
