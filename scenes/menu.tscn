@@ -1,6 +1,97 @@
-[gd_scene load_steps=2 format=3 uid="uid://iv0dkqh4v6vv"]
+[gd_scene load_steps=18 format=3 uid="uid://iv0dkqh4v6vv"]
 
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_4l7xp"]
+[ext_resource type="Texture2D" uid="uid://c7vebggluxdt7" path="res://assets/Lemming_start_screen_background.png" id="2_ifelu"]
+[ext_resource type="Texture2D" uid="uid://bvse8jkabpxxw" path="res://assets/sprites/clouds.png" id="3_j3phx"]
+[ext_resource type="Texture2D" uid="uid://c641irephj13t" path="res://assets/sprites/Lemming_start_screen_title.png" id="3_oyyob"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wnhd5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6eqg2"]
+atlas = ExtResource("3_j3phx")
+region = Rect2(0, 0, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8mkkb"]
+atlas = ExtResource("3_j3phx")
+region = Rect2(1152, 0, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mje7v"]
+atlas = ExtResource("3_j3phx")
+region = Rect2(2304, 0, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n2vr8"]
+atlas = ExtResource("3_j3phx")
+region = Rect2(3456, 0, 1152, 648)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ecci2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6eqg2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8mkkb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mje7v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n2vr8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qpnc5"]
+atlas = ExtResource("3_oyyob")
+region = Rect2(0, 0, 1152, 362)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_802t3"]
+atlas = ExtResource("3_oyyob")
+region = Rect2(1152, 0, 1152, 362)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oo811"]
+atlas = ExtResource("3_oyyob")
+region = Rect2(2304, 0, 1152, 362)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_782my"]
+atlas = ExtResource("3_oyyob")
+region = Rect2(3456, 0, 1152, 362)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b6npq"]
+atlas = ExtResource("3_oyyob")
+region = Rect2(4608, 0, 1152, 362)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mr6ri"]
+atlas = ExtResource("3_oyyob")
+region = Rect2(5760, 0, 1152, 362)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y2uxh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qpnc5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_802t3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oo811")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_782my")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b6npq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mr6ri")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -10,6 +101,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_4l7xp")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 648.0
+texture = ExtResource("2_ifelu")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -37,6 +134,27 @@ text = "Options
 [node name="Quit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "Quit"
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.017
+offset_left = 257.0
+offset_top = 96.0
+offset_right = 933.416
+offset_bottom = 257.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_wnhd5")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Panel"]
+position = Vector2(319.5, 228)
+scale = Vector2(1.00087, 1)
+sprite_frames = SubResource("SpriteFrames_ecci2")
+frame_progress = 0.842241
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Panel"]
+position = Vector2(319, 57)
+sprite_frames = SubResource("SpriteFrames_y2uxh")
+frame_progress = 0.664515
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
