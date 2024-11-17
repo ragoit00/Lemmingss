@@ -10,10 +10,20 @@ config_version=5
 
 [application]
 
+<<<<<<< HEAD
 config/name="Neuer Ordner"
 config/features=PackedStringArray("4.2", "Mobile")
+=======
+config/name="test2"
+run/main_scene="res://scenes/menu.tscn"
+config/features=PackedStringArray("4.3", "Forward Plus")
+>>>>>>> origin/master
 config/icon="res://icon.svg"
 
 [rendering]
 
+<<<<<<< HEAD
 renderer/rendering_method="mobile"
+=======
+textures/canvas_textures/default_texture_filter=0
+>>>>>>> origin/master

@@ -2,20 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<< HEAD
-uid="uid://cjb2ak2lopw0g"
-=======
-uid="uid://0q1qtkqqm2oj"
->>>>>>> origin/master
-path="res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"
+uid="uid://ctspihmxm0x6m"
+path="res://.godot/imported/Lemming-walking.png-4d5f0c0110a5c832554476aceaaa0fe3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://icon.svg"
-dest_files=["res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"]
+source_file="res://assets/Lemming-walking.png"
+dest_files=["res://.godot/imported/Lemming-walking.png-4d5f0c0110a5c832554476aceaaa0fe3.ctex"]
 
 [params]
 
@@ -36,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

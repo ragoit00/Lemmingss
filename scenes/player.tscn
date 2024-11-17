@@ -1,0 +1,56 @@
+[gd_scene load_steps=9 format=3 uid="uid://d1dfa5is30jbs"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_smyyd"]
+[ext_resource type="Texture2D" uid="uid://ctspihmxm0x6m" path="res://assets/Lemming-walking.png" id="1_ye2vu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v5n3c"]
+atlas = ExtResource("1_ye2vu")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_62r60"]
+atlas = ExtResource("1_ye2vu")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1lo5s"]
+atlas = ExtResource("1_ye2vu")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a6bng"]
+atlas = ExtResource("1_ye2vu")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xxw3h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v5n3c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_62r60")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1lo5s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a6bng")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hyf15"]
+radius = 4.0
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_smyyd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_xxw3h")
+autoplay = "default"
+frame_progress = 0.990212
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4)
+shape = SubResource("CircleShape2D_hyf15")
